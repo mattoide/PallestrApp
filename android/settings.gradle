@@ -1,0 +1,3 @@
+rootProject.name = 'PallestrApp'
+
+include ':app'
