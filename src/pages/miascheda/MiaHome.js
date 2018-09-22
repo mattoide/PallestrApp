@@ -1,13 +1,23 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+
 import React, { Component } from 'react';
-import { StyleSheet, Dimensions } from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View, Dimensions
+} from 'react-native';
+import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
+import MioTronco from "./MioTronco"
+import MieBraccia from "./MieBraccia"
+import MieGambe from "./MieGambe"
 
-import { TabView, SceneMap } from 'react-native-tab-view';
-
-
-import Tronco from "./Tronco"
-import Braccia from "./Braccia"
-import Gambe from "./Gambe"
-import { green } from 'ansi-colors';
 
 
 
@@ -26,25 +36,21 @@ export default class App extends Component {
   }
 
 
-  
 render() {
-
-
+  
   return (
-
     <TabView
     navigationState={this.state}
     renderScene={SceneMap({
-      first: () => <Tronco navigation={this.props.navigation}/>,
-      second: () => <Braccia navigation={this.props.navigation}/>,
-      third: () => <Gambe navigation={this.props.navigation}/>
+      first: () => <MioTronco navigation={this.props.navigation}/>,
+      second: () => <MieBraccia navigation={this.props.navigation}/>,
+      third: () => <MieGambe navigation={this.props.navigation}/>
     })}
     onIndexChange={index => this.setState({ index })}
-    initialLayout={{ width: Dimensions.get('window').width, height: 0}}
-    
+    initialLayout={{ width: Dimensions.get('window').width, height:0 }}
   />
   );
-}
+} 
 }
 
 
