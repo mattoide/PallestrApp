@@ -63,12 +63,12 @@ export default class MieBraccia extends Component {
       await AsyncStorage.getItem('nickname').then((value) => {
         this.setState({ nickname: value });
         console.log(this.state.nickname)
+        this.refresh();
 
       });
 
     } catch (error) {
     }
-    this.refresh();
   }
 
   render() {
@@ -130,10 +130,16 @@ export default class MieBraccia extends Component {
           onPress={() => this.props.navigation.navigate('Home')}
 
 
-          title="Vai a tutti gli esercizi"
+          title="Aggiungi esercizi"
           color="gray"
         />
+<Button
+          onPress={() => this.props.navigation.navigate('Login')}
 
+
+          title="Logout"
+          color="red"
+        />
 
         <Modal visible={this.state.modalVisible}
           onRequestClose={() => { }}
@@ -326,7 +332,7 @@ export default class MieBraccia extends Component {
 const styles = StyleSheet.create({
 
   container: { flex: 1, padding: 1, paddingTop: 5, backgroundColor: '#fff' },
-  header: { height: 50, backgroundColor: '#537791', },
+  header: { height: 50, backgroundColor: '#537791' },
   text: { textAlign: 'center', fontWeight: '100', width: 83 },
   dataWrapper: { marginTop: -1 },
   row: { height: 40, backgroundColor: '#E7E6E1', maxWidth: 420 },

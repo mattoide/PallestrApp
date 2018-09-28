@@ -63,12 +63,12 @@ export default class MieGambe extends Component {
       await AsyncStorage.getItem('nickname').then((value) => {
         this.setState({ nickname: value });
         console.log(this.state.nickname)
+        this.refresh();
 
       });
 
     } catch (error) {
     }
-    this.refresh();
   }
 
   render() {
@@ -130,8 +130,15 @@ export default class MieGambe extends Component {
           onPress={() => this.props.navigation.navigate('Home')}
 
 
-          title="Vai a tutti gli esercizi"
+          title="Aggiungi esercizi"
           color="gray"
+        />
+        <Button
+          onPress={() => this.props.navigation.navigate('Login')}
+
+
+          title="Logout"
+          color="red"
         />
 
 

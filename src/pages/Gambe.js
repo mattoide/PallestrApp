@@ -57,12 +57,12 @@ export default class Gambe extends Component {
       await AsyncStorage.getItem('nickname').then((value) => {
         this.setState({ nickname: value });
         console.log(this.state.nickname)
+        this.refresh();
 
       });
 
     } catch (error) {
     }
-    this.refresh();
 
   }
 
@@ -127,6 +127,13 @@ export default class Gambe extends Component {
 
           title="Vai alla mia scheda"
           color="gray"
+        />
+        <Button
+          onPress={() => this.props.navigation.navigate('Login')}
+
+
+          title="Logout"
+          color="red"
         />
 
         <Modal visible={this.state.modalVisible}

@@ -23,7 +23,9 @@ export default class Login extends Component {
     }; 
   }
 
-
+componentDidMount() {
+  this.state.nickname = ''
+}
 
   render() {
 
@@ -41,7 +43,8 @@ export default class Login extends Component {
         <TextInput
           placeholder="Password"
           onChangeText={(input) => this.state.password = input}
-        />
+          secureTextEntry={true}    
+              />
 
         <View style={styles.login}>
           <Button
@@ -53,11 +56,11 @@ export default class Login extends Component {
 
   
 
-        <Button
+        {/*<Button
           onPress={() => this.prova()}
           title="PROVA"
           color="black"
-        />
+        />*/}
 
 
 
@@ -167,7 +170,7 @@ export default class Login extends Component {
                 AsyncStorage.setItem('password', this.state.password);
                 AsyncStorage.setItem('nickname', this.state.user.nickname); 
 
-                this.props.navigation.navigate('Home');
+                this.props.navigation.navigate('MiaHome');
 
               } catch (error) {
               }
