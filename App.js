@@ -12,7 +12,8 @@ YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTIm
 
 import { createStackNavigator } from 'react-navigation';
 
-export const baseUrl = "http://192.168.1.9";
+export const baseUrl = "http://192.168.1.11"; 
+//export const baseUrl = "http://ehpink.drink-web.eu";  
 export const listExercise = "/Pallestra/script/listAvailableExercise.php";
 export const listMyExercise = "/Pallestra/script/getMuscles.php";
 
